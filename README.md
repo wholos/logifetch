@@ -1,2 +1,0 @@
-# logifetch
-fetch on dlang
