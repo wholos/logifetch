@@ -4,25 +4,25 @@ DESCRIPTION="Fast system fetch written in D"
 HOMEPAGE="https://github.com/wholos/logifetch"
 EGIT_REPO_URI="https://github.com/wholos/logifetch.git"
 
-inherit git-r3 dlang
+inherit git-r3 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="amd64 x86"
 
 RDEPEND="
-	sys-apps/pciutils
+        sys-apps/pciutils
 "
 DEPEND="
-	${RDEPEND}
-	dev-lang/dmd
-	dev-util/just
+        ${RDEPEND}
+        dev-lang/dmd
+        dev-build/just
 "
 
 src_compile() {
-	just all
+        just all
 }
 
 src_install() {
-	dobin logifetch
+        dobin logifetch
 }
