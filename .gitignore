@@ -1,0 +1,4 @@
+# Ignore all shell scripts
+*.ebuild
+*PKGBUILD
+*.sh
