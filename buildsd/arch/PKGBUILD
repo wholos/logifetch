@@ -1,0 +1,24 @@
+# Maintainer: holos
+pkgname=logifetch-git
+pkgver=0.1.0.r0.g0000000
+pkgrel=1
+pkgdesc="Simple hardware fetch tool written in D"
+arch=('x86_64')
+url="https://github.com/wholos/logifetch"
+license=('MIT')
+depends=('pciutils')
+makedepends=('dmd' 'just' 'git')
+source=("git+https://github.com/wholos/logifetch.git")
+sha256sums=('SKIP')
+pkgver() {
+  cd logifetch
+  git describe --tags --long --dirty | sed 's/^v//;s/-/.r/;s/-/./'
+}
+build() {
+  cd logifetch
+  just all
+}
+package() {
+  cd logifetch
+  install -Dm755 logifetch "$pkgdir/usr/bin/logifetch"
+}
