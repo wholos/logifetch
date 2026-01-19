@@ -1,0 +1,2 @@
+PKGBUILD linguist-detectable=false
+*.ebuild linguist-detectable=false
